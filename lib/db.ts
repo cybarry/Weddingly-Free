@@ -16,6 +16,11 @@ declare global {
   var mongoose: MongooseCache | undefined;
 }
 
+/**
+ * Global is used here to maintain a cached connection across hot reloads
+ * in development. This prevents connections from growing exponentially
+ * during API Route usage.
+ */
 let cached = global.mongoose;
 
 if (!cached) {
@@ -23,30 +28,33 @@ if (!cached) {
 }
 
 async function connectToDatabase() {
-  if (cached.conn) {
-    return cached.conn;
+  // We've ensured 'cached' is defined above, but TS needs a hint or a re-check
+  const currentCache = cached!;
+
+  if (currentCache.conn) {
+    return currentCache.conn;
   }
 
-  if (!cached.promise) {
+  if (!currentCache.promise) {
     const opts = {
       bufferCommands: false,
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseInstance) => {
+    currentCache.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseInstance) => {
       console.log("Connected to database");
       return mongooseInstance;
     });
   }
 
   try {
-    cached.conn = await cached.promise;
+    currentCache.conn = await currentCache.promise;
   } catch (e) {
-    cached.promise = null;
+    currentCache.promise = null;
     console.error("Failed to connect to database:", e);
     throw e;
   }
 
-  return cached.conn;
+  return currentCache.conn;
 }
 
 export default connectToDatabase;
