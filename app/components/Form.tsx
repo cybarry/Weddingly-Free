@@ -24,7 +24,7 @@ const Form = () => {
 
     if (!data.name || !data.attendance || !data.guests || !data.message) {
       alert("All fields are required!");
-      setLoading(false); 
+      setLoading(false);
       return;
     }
 
@@ -52,7 +52,7 @@ const Form = () => {
       {/* Form fields */}
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-white">
-          Nama
+          Name
         </label>
         <input
           type="text"
@@ -68,7 +68,7 @@ const Form = () => {
           htmlFor="attendance"
           className="block text-sm font-medium text-white"
         >
-          Kehadiran
+          Attendance
         </label>
         <select
           id="attendance"
@@ -76,9 +76,9 @@ const Form = () => {
           className="block w-full p-2 mt-1 bg-black/40 text-white border border-gray-300 rounded-md shadow-sm  sm:text-sm"
           required
         >
-          <option value="">Pilih Kehadiran</option>
-          <option value="Hadir">Hadir</option>
-          <option value="Tidak Hadir">Tidak Hadir</option>
+          <option value="">Select Attendance</option>
+          <option value="Hadir">Will be Present</option>
+          <option value="Tidak Hadir">Will not be present</option>
         </select>
       </div>
 
@@ -87,7 +87,7 @@ const Form = () => {
           htmlFor="guests"
           className="block text-sm font-medium text-white"
         >
-          Jumlah Tamu
+          Number of Guests
         </label>
         <select
           id="guests"
@@ -95,7 +95,7 @@ const Form = () => {
           className="block w-full p-2 mt-1  bg-black/40 text-white border border-gray-300 rounded-md shadow-sm  sm:text-sm"
           required
         >
-          <option value="">Pilih Jumlah Tamu</option>
+          <option value="">Select Number of Guests</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -108,7 +108,7 @@ const Form = () => {
           htmlFor="message"
           className="block text-sm font-medium text-white"
         >
-          Ucapan
+          Message
         </label>
         <textarea
           id="message"
@@ -123,9 +123,9 @@ const Form = () => {
         <button
           type="submit"
           className="block w-full p-2 text-sm font-medium text-center text-black bg-white border border-transparent rounded-md shadow-sm"
-          disabled={loading} 
+          disabled={loading}
         >
-          {loading ? "Submitting..." : "Submit"} 
+          {loading ? "Submitting..." : "Submit"}
         </button>
       </div>
     </form>
