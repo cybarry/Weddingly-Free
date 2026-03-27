@@ -21,40 +21,41 @@ declare global {
  * in development. This prevents connections from growing exponentially
  * during API Route usage.
  */
-let cached = global.mongoose;
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
+function getCache(): MongooseCache {
+  if (!global.mongoose) {
+    global.mongoose = { conn: null, promise: null };
+  }
+  return global.mongoose;
 }
 
 async function connectToDatabase() {
-  // We've ensured 'cached' is defined above, but TS needs a hint or a re-check
-  const currentCache = cached!;
+  const cached = getCache();
 
-  if (currentCache.conn) {
-    return currentCache.conn;
+  if (cached.conn) {
+    return cached.conn;
   }
 
-  if (!currentCache.promise) {
+  if (!cached.promise) {
     const opts = {
       bufferCommands: false,
     };
 
-    currentCache.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseInstance) => {
+    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseInstance) => {
       console.log("Connected to database");
       return mongooseInstance;
     });
   }
 
   try {
-    currentCache.conn = await currentCache.promise;
+    cached.conn = await cached.promise;
   } catch (e) {
-    currentCache.promise = null;
+    cached.promise = null;
     console.error("Failed to connect to database:", e);
     throw e;
   }
 
-  return currentCache.conn;
+  return cached.conn;
 }
 
 export default connectToDatabase;
