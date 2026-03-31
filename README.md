@@ -2,7 +2,7 @@
   <img alt=" Weedingly Free – an open-source wedding invitation." src="public/remove_me/logo.png" width="100" >
   <h1 align="center">Weedingly</h1>
   <p align="center">
-        Made with ❤️ by <a ref="https://github.com/petershaan12">Peter Shaan</a>.
+        Made with ❤️ by <a ref="https://github.com/cybarry">Cybarry</a>.
     </p>
 </p>
 
