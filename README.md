@@ -25,11 +25,18 @@
 
 ## About
 
-This is a modern and fully customizable wedding invitation template built using **Next.js**, **TypeScript**, **TailwindCSS**, **react-type-animation**, and **react-intersection-observer**. It's designed to be user-friendly, allowing couples to personalize their wedding details easily.
+This is a modern and fully customizable wedding invitation template built using **Next.js**, **TypeScript**, **TailwindCSS**, **react-type-animation**, and **react-intersection-observer**. It's designed to be user-friendly, allowing couples to personalize their wedding details easily. **Newly added features include a full-fledged robust Gift Registry and a secure Admin Dashboard** to manage RSVPs and gifts seamlessly.
 
 ## RSVP Feature with MongoDB
 
 Weedingly includes a built-in RSVP feature that allows guests to confirm their attendance easily. The RSVP form can be customized to include additional questions or information as needed. The responses are stored in a database for easy management and tracking.
+
+## Gift Registry & Admin Dashboard 🎁
+
+This project has been upgraded to include a complete **Gift Registry** embedded right into the invitation flow!
+- Guests can browse curated gifts, reserve items, or pledge cash equivalents via direct bank transfer.
+- Includes a secure, password-protected **`/admin`** panel where you can add/remove items, monitor guest bookings, see their well-wishes, and update the status of gifts (e.g., "Gifted ✅" or "Cash Received 💵").
+- Images are automatically converted to Base64 and stored directly in your MongoDB cluster, ensuring your images survive serverless host deployments (like Vercel)!
 
 ---
 
@@ -49,6 +56,9 @@ This project was inspired by the beautiful designs found on [Groove Public](http
 - **MongoDB Integration**: Store and manage RSVP data using MongoDB.
 - **Customizable RSVP Form**: Tailor the RSVP form to include additional questions or information.
 - **RSVP Tracking**: Keep track of guest responses and manage attendance efficiently.
+- **Interactive Gift Registry**: A standalone `/registry` page and an inline registry slide for guests to browse and claim gifts.
+- **Secure Admin Panel**: Manage your registry inventory and track cash pledges at `/admin`.
+- **Bank Transfer Modal**: Integrated UI for guests choosing to send cash equivalents safely.
 
 ---
 
@@ -63,7 +73,8 @@ This project was inspired by the beautiful designs found on [Groove Public](http
    ```
 2. **Set up environment variables: Create a .env.local file in your root directory and add the following in .env.example**
 3. **Create Database in MongoDB**:
-   Create a new database in MongoDB and name it `wish`. Inside this database, create a collection named `wishes`.
+   Create a new database in MongoDB and name it `weddingly` (or anything you prefer). The application will automatically use Mongoose to create the following collections when needed: `wishes`, `giftitems`, and `giftbookings`.
+   Make sure you grab your Cluster's Connection String and add it to `.env.local`.
 4. **Run The Project**
 
     ```bash
@@ -102,6 +113,8 @@ You can customize the following via environment variables:
 
 * Wedding Name, Dates, Countdown
 * Your OWN RSVP
+* Your secure **`ADMIN_PASSWORD`** (keeps your registry dashboard safe)
+* **`NEXT_PUBLIC_BANK_*`** details so guests can pledge cash gifts directly to your accounts
 * Music in `public\music\wedding_song.mp3`
 * Picture in the public folder
 
