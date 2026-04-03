@@ -98,7 +98,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
       <div
         className="md:flex justify-center hidden items-end pb-12 w-2/3 h-1/2 md:h-full"
         style={{
-          backgroundImage: `url(/foto_1_samping.jpg)`, //refer to base 1st photo
+          backgroundImage: `url(/main.jpeg)`, //refer to base 1st photo
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -171,7 +171,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
             <div
               className={`text-white h-screen flex pt-12 p-5 px-12 snap-start `}
               style={{
-                backgroundImage: `url(/slide_1.jpg)`,
+                backgroundImage: `url(/slide1.jpeg)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -193,7 +193,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
             <div
               className="snap-start  text-white h-screen flex flex-col items-center px-12 "
               style={{
-                backgroundImage: `url(/slide_5.jpg)`,
+                backgroundImage: `url(/slide5.jpeg)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -263,7 +263,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
             <div
               className="snap-start text-white min-h-screen flex flex-col py-14 px-8 relative"
               style={{
-                backgroundImage: `url(/slide_9.jpg)`,
+                backgroundImage: `url(/slide9.jpeg)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -302,8 +302,8 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
                         <div
                           key={item._id}
                           className={`border rounded-xl p-3 flex items-center gap-3 transition-colors duration-200 ${item.giftedStatus !== "none"
-                              ? "bg-white/3 border-white/5 opacity-40"
-                              : "bg-white/5 border-white/10 hover:border-amber-400/25"
+                            ? "bg-white/3 border-white/5 opacity-40"
+                            : "bg-white/5 border-white/10 hover:border-amber-400/25"
                             }`}
                         >
                           {item.imageUrl ? (
@@ -375,7 +375,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
               <div
                 className="snap-start text-white h-screen flex flex-col justify-center pt-16 pb-16 px-8"
                 style={{
-                  backgroundImage: `url(/slide_9.jpg)`,
+                  backgroundImage: `url(/slide92.jpeg)`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -400,7 +400,7 @@ const WeddingScreen = ({ name }: WeddingScreenProps) => {
             <div
               className="snap-start text-white h-screen flex flex-col justify-end pt-16 pb-16 px-12 "
               style={{
-                backgroundImage: `url(/slide_7.jpg)`,
+                backgroundImage: `url(/slide10.jpeg)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

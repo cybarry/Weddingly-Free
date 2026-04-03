@@ -48,25 +48,32 @@ body {
   animation-duration: 10s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
-  background-color: #0a0a0a;
+  background-color: #ffffff;
 }
 
 @keyframes animate {
- 0% {
-  background-image: url(../public/foto_2.jpg);
- }
- 45% {
-  background-image: url(../public/foto_4.jpg);
- }
-  85% {
-    background-image: url(../public/foto_1.jpg);
+  0% {
+    /*background-image: url(../public/foto_2.jpg);*/
+    background-image: url(../public/slide1.jpeg);
   }
+
+  45% {
+    /*background-image: url(../public/foto_4.jpg);*/
+    background-image: url(../public/slide5.jpeg);
+  }
+
+  85% {
+    /*background-image: url(../public/foto_1.jpg);*/
+    background-image: url(../public/slide9.jpeg);
+  }
+
   100% {
-    background-image: url(../public/foto_2.jpg);
+    /*background-image: url(../public/foto_2.jpg);*/
+    background-image: url(../public/slide10.jpeg);
   }
 }
 
-#backgroundWedding > div {
+#backgroundWedding>div {
   animation: fade 5s infinite;
 }
 
@@ -75,6 +82,7 @@ body {
   opacity: 0;
   transition: opacity 3s ease-in;
 }
+
 .fadeMain2 {
   opacity: 0;
   transition: opacity 0.8s ease-out;
@@ -85,6 +93,7 @@ body {
   transform: translateY(20px);
   transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
+
 .fadeInMoveSlow {
   opacity: 0;
   transform: translateY(-20px);
