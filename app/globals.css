@@ -4,7 +4,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #07094d;
   --font-ovo: 'Ovo', serif;
   --font-legan: 'Legan', serif;
   --font-wonder: 'Wonder', sans-serif;
@@ -54,15 +54,20 @@ body {
 @keyframes animate {
   0% {
     /*background-image: url(../public/foto_2.jpg);*/
+    background-image: url(../public/mandzub.jpeg);
+  }
+
+  20% {
+    /*background-image: url(../public/foto_4.jpg);*/
     background-image: url(../public/slide1.jpeg);
   }
 
-  45% {
+  60% {
     /*background-image: url(../public/foto_4.jpg);*/
     background-image: url(../public/slide5.jpeg);
   }
 
-  85% {
+  80% {
     /*background-image: url(../public/foto_1.jpg);*/
     background-image: url(../public/slide9.jpeg);
   }
